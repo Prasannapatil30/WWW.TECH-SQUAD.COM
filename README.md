@@ -7,7 +7,8 @@ No frameworks, no third-party scripts, no external fonts, nothing to install.
 Double-click `index.html`. To publish, upload the folder to Cloudflare Pages or Netlify (both are free, give HTTPS automatically, and read `_headers`).
 
 ## Before you go live (edit these)
-1. `script.js` -> `WHATSAPP_NUMBER` (country code + number, digits only, e.g. `919876543210`). Orders are sent to this WhatsApp number.
+1. `script.js` -> `WHATSAPP_NUMBER` is already set to `919689697979`. All orders go to this WhatsApp number. Change it there (and in the footer of `index.html`) if you ever switch numbers.
+   Payment choices (COD, UPI, Card/Net Banking) are in `PAYMENTS` in `script.js` and in the checkout form in `index.html`. The chosen method is included in the WhatsApp message. UPI and card payments are not taken on the website: you send the payment QR or link on WhatsApp after confirming the order.
 2. `script.js` -> `PRODUCTS`: prices, descriptions and "What you get" lists. **Make them match the parts you actually ship.** I assumed Arduino-compatible boards for the three cars (as in your Robu cart) and left battery details out; add "Batteries not included" if that is true.
 3. `index.html` footer: add your real email and WhatsApp number.
 4. Replace the drawn icons with real photos later: add images to the folder and show them in `productCard()`.

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Security: strict Content-Security-Policy. No inline scripts or styles, no third-party code. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>TechSquad – Robotics &amp; IoT Kits</title>
+  <meta name="description" content="TechSquad robotics and IoT kits: obstacle avoidance car, Bluetooth car, line following car, robotic arm, smart irrigation and home automation. Code included.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+
+  <!-- TechSquad logo (defined once, reused with <use>) -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="ts-logo" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="tsg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#22D3EE"/>
+          <stop offset="1" stop-color="#6366F1"/>
+        </linearGradient>
+      </defs>
+      <path d="M32 3 57 17.5v29L32 61 7 46.5v-29z" fill="url(#tsg)"/>
+      <rect x="19" y="19" width="26" height="26" rx="5" fill="#0B1020"/>
+      <path d="M24 26h16M32 26v12" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <circle cx="25" cy="39" r="1.9" fill="#22D3EE"/>
+      <circle cx="39" cy="39" r="1.9" fill="#22D3EE"/>
+      <path d="M25 15v4M32 15v4M39 15v4M25 45v4M32 45v4M39 45v4M15 25h4M15 32h4M15 39h4M45 25h4M45 32h4M45 39h4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#shop">Skip to products</a>
+
+  <header class="site-header">
+    <div class="topbar">Ready-to-code robotics &amp; IoT kits for students, makers and schools</div>
+    <div class="bar container">
+      <a class="brand" href="#top" aria-label="TechSquad home">
+        <svg class="logo" aria-hidden="true"><use href="#ts-logo"/></svg>
+        <span class="brand-text"><b>Tech</b><span>Squad</span></span>
+      </a>
+
+      <form class="search" id="searchForm" role="search">
+        <input id="searchInput" type="search" maxlength="60" placeholder="Search kits (car, arm, irrigation...)" aria-label="Search kits" autocomplete="off">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg>
+        <span class="cart-label">Cart</span>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+    </div>
+    <nav class="cats container" aria-label="Categories">
+      <button type="button" class="cat is-active" data-filter="all">All kits</button>
+      <button type="button" class="cat" data-filter="cars">Robot cars</button>
+      <button type="button" class="cat" data-filter="pro">Pro range</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">TechSquad Robotics Labs</p>
+          <h1>Build it. Code it. <span class="grad">Make it move.</span></h1>
+          <p class="lead">Six hands-on kits, from your first obstacle-avoiding car to a web-controlled robotic arm and smart IoT projects. Every kit comes with ready-to-upload code and a step-by-step guide.</p>
+          <div class="hero-cta">
+            <a class="btn btn-accent btn-lg" href="#shop">Shop kits</a>
+            <a class="btn btn-ghost btn-lg" href="#how">How it works</a>
+          </div>
+          <ul class="hero-points">
+            <li>Code included</li>
+            <li>Beginner friendly</li>
+            <li>Great for school and college projects</li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg class="hero-logo"><use href="#ts-logo"/></svg>
+          <span class="orb orb-1"></span>
+          <span class="orb orb-2"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features container" aria-label="Why TechSquad">
+      <article class="feature"><h3>Code included</h3><p>Tested, commented sketches for every kit, so it works on day one.</p></article>
+      <article class="feature"><h3>Learn by building</h3><p>Wiring diagrams and guides that teach you how it works, not just what to plug in.</p></article>
+      <article class="feature"><h3>Made for makers</h3><p>Perfect for science fairs, robotics clubs and college mini-projects.</p></article>
+      <article class="feature"><h3>Ask the squad</h3><p>Stuck on a step? Message us and we will help you get it running.</p></article>
+    </section>
+
+    <!-- SHOP -->
+    <section class="shop container" id="shop" aria-labelledby="shopTitle">
+      <div class="shop-head">
+        <h2 id="shopTitle">TechSquad kits</h2>
+        <div class="shop-tools">
+          <label class="sort">
+            <span>Sort by</span>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <p class="result-note" id="resultNote" aria-live="polite"></p>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how">
+      <div class="container">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li><b>Pick a kit</b><span>Choose a robot car, the robotic arm or an IoT project.</span></li>
+          <li><b>Assemble</b><span>Follow the guide and wiring diagram included with your kit.</span></li>
+          <li><b>Upload the code</b><span>Open our ready-made code, upload it, and watch it run.</span></li>
+          <li><b>Customise</b><span>Change the code, add sensors, and make it your own project.</span></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="#top" aria-label="TechSquad home">
+          <svg class="logo" aria-hidden="true"><use href="#ts-logo"/></svg>
+          <span class="brand-text"><b>Tech</b><span>Squad</span></span>
+        </a>
+        <p class="muted">Robotics and IoT kits that teach by doing.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="plain">
+          <li><a href="#shop">All kits</a></li>
+          <li><a href="#how">How it works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="plain muted">
+          <li>Email: add your email here</li>
+          <li>WhatsApp: +91 96896 97979</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container legal">
+      <span>&copy; <span id="year">2026</span> TechSquad. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawerTitle">
+    <div class="drawer-head">
+      <h2 id="drawerTitle">Your cart</h2>
+      <button type="button" class="icon-btn" id="closeCart" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <button type="button" class="btn btn-accent btn-block" id="checkoutBtn">Checkout</button>
+      <button type="button" class="btn btn-ghost btn-block" id="clearCart">Clear cart</button>
+    </div>
+  </aside>
+
+  <!-- PRODUCT DETAILS -->
+  <dialog class="dialog" id="productDialog" aria-label="Product details">
+    <button type="button" class="icon-btn dialog-close" data-close="productDialog" aria-label="Close">&times;</button>
+    <div id="productBody"></div>
+  </dialog>
+
+  <!-- CHECKOUT -->
+  <dialog class="dialog" id="checkoutDialog" aria-label="Checkout">
+    <button type="button" class="icon-btn dialog-close" data-close="checkoutDialog" aria-label="Close">&times;</button>
+    <h2>Checkout</h2>
+    <p class="muted">Enter your details and choose how you want to pay. Your order is sent to us on WhatsApp and we confirm it with you there. You never pay on this website.</p>
+    <form id="checkoutForm" novalidate>
+      <label class="field">Full name
+        <input name="name" type="text" maxlength="60" autocomplete="name" required>
+        <small class="err" data-err="name"></small>
+      </label>
+      <label class="field">Mobile number
+        <input name="phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10-digit number" required>
+        <small class="err" data-err="phone"></small>
+      </label>
+      <label class="field">Full address
+        <textarea name="address" rows="3" maxlength="200" autocomplete="street-address" required></textarea>
+        <small class="err" data-err="address"></small>
+      </label>
+      <label class="field">PIN code
+        <input name="pin" type="text" inputmode="numeric" maxlength="6" autocomplete="postal-code" required>
+        <small class="err" data-err="pin"></small>
+      </label>
+      <fieldset class="pay">
+        <legend>Payment method</legend>
+        <label class="pay-opt"><input type="radio" name="payment" value="cod" required>
+          <span><b>Cash on Delivery</b><small>Pay when your kit arrives</small></span></label>
+        <label class="pay-opt"><input type="radio" name="payment" value="upi">
+          <span><b>UPI</b><small>GPay, PhonePe, Paytm. We send the payment QR on WhatsApp</small></span></label>
+        <label class="pay-opt"><input type="radio" name="payment" value="card">
+          <span><b>Card / Net Banking</b><small>We send a secure payment link on WhatsApp</small></span></label>
+        <small class="err" data-err="payment"></small>
+      </fieldset>
+      <!-- Honeypot: real people never see or fill this -->
+      <div class="hp" aria-hidden="true">
+        <label>Website <input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <div class="total-row"><span>Order total</span><strong id="checkoutTotal">₹0</strong></div>
+      <button type="submit" class="btn btn-accent btn-block btn-lg">Send order on WhatsApp</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
