@@ -9,8 +9,8 @@ Double-click `index.html`. To publish, upload the folder to Cloudflare Pages or 
 ## Before you go live (edit these)
 1. `script.js` -> `WHATSAPP_NUMBER` is already set to `919689697979`. All orders go to this WhatsApp number. Change it there (and in the footer of `index.html`) if you ever switch numbers.
    Payment choices (COD, UPI, Card/Net Banking) are in `PAYMENTS` in `script.js` and in the checkout form in `index.html`. The chosen method is included in the WhatsApp message. UPI and card payments are not taken on the website: you send the payment QR or link on WhatsApp after confirming the order.
-2. `script.js` -> `PRODUCTS`: prices, descriptions and "What you get" lists. **Make them match the parts you actually ship.** I assumed Arduino-compatible boards for the three cars (as in your Robu cart) and left battery details out; add "Batteries not included" if that is true.
-3. `index.html` footer: add your real email and WhatsApp number.
+2. `script.js` -> `PRODUCTS`: prices (obstacle car 1650, Bluetooth car 1500, IR line car 1350, robotic arm 2350, agriculture 1780, home automation 1780), descriptions and "What you get" lists. Kit pictures are in `images/` (illustrations; swap in real photos when you have them: change the `img` path of each product). **Make them match the parts you actually ship.** I assumed Arduino-compatible boards for the three cars (as in your Robu cart) and left battery details out; add "Batteries not included" if that is true.
+3. `index.html` footer already has your WhatsApp number and dr.nileshppatil@gmail.com.
 4. Replace the drawn icons with real photos later: add images to the folder and show them in `productCard()`.
 5. Add Privacy Policy, Terms and Return/Refund pages. Indian customers and payment providers expect them.
 
