@@ -87,13 +87,26 @@
     return document.importNode(doc.documentElement, true);
   }
 
-  // Kit picture (local file only; alt text is set from our own catalog)
+  // Kit picture (local files only). Tries several places, so it works whether the pictures are in
+  // an "images" folder or uploaded flat next to index.html. Alt text comes from our own catalog.
   function kitImg(p) {
+    const base = String(p.img).replace(/^.*\//, '').replace(/\.[a-z]+$/i, '');
+    const tries = [
+      'images/' + base + '.svg',
+      base + '.png',
+      'images/' + base + '.png',
+      'kit_images/' + base + '.png'
+    ];
+    let n = 0;
     const i = document.createElement('img');
-    i.src = p.img;
     i.alt = p.name;
     i.width = 1200; i.height = 900;
     i.decoding = 'async';
+    i.addEventListener('error', () => {
+      n += 1;
+      if (n < tries.length) i.src = tries[n];
+    });
+    i.src = tries[0];
     return i;
   }
 
